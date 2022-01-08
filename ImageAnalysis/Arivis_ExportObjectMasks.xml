@@ -1,0 +1,30 @@
+<pipeline version="3.1">
+  <operations>
+    <operation type-id="arivis.analysis.selection" id="arivis.analysis.selection1">
+      <settings>{"ZoomXYOnly":false,"Zoom":1.0,"SelectionHint":2,"Frames":"1","Planes":"1-201","Channels":"1-2","Bounds":"0, 0, 923, 925","PixelType":1,"ScopeID":"0","Document":"E:\\Sarah\\SW_20192020_ Tumor imaging after Prazosin\\Analysed data_Raw Analysis\\378078\\10-46-44_00x01-1.sis"}</settings>
+    </operation>
+    <operation type-id="arivis.analysis.store.ImportAnnotation" id="arivis.analysis.store.ImportAnnotation1" name="Import Document Objects">
+      <inputs>
+        <port operation-ref="arivis.analysis.selection1" port-index="0" />
+      </inputs>
+      <settings>{"Tags":["Blood Vessel"],"CopyTags":true,"TagsToRemove":null}</settings>
+    </operation>
+    <operation type-id="arivis.analysis.store.ExportLabelImages" id="arivis.analysis.store.ExportLabelImages1" name="Export Objects to Labeled Images">
+      <inputs>
+        <port operation-ref="arivis.analysis.store.ImportAnnotation1" port-index="0" />
+      </inputs>
+      <settings>{"FileName":"E:\\Sarah\\SW_20192020_ Tumor imaging after Prazosin\\Analysed data_Raw Analysis\\378078\\Blood Vessel Objects\\10-46-44_00x01-1.tiff","ConversionMode":1,"SkipEmptyPlanes":false}</settings>
+    </operation>
+    <operation type-id="arivis.analysis.store.StoreAnnotation" id="arivis.analysis.store.StoreAnnotation1">
+      <inputs>
+        <port operation-ref="arivis.analysis.store.ImportAnnotation1" port-index="0" />
+      </inputs>
+      <settings version="V_2_12_5">{"PortConnectionInformation":[{"OperationRef":"arivis.analysis.store.ImportAnnotation1","PortIndex":0,"Connected":false}],"NamePattern":"$n","TagPattern":"$n","TagsToAdd":null,"TagsToDelete":["Import Document Objects"],"PreserveAllTags":false,"KeepOnUndo":false}</settings>
+    </operation>
+    <operation type-id="arivis.analysis.endOfPipeline" id="arivis.analysis.endOfPipeline1">
+      <settings />
+    </operation>
+  </operations>
+  <layout />
+  <features><![CDATA[{"Version":"3.1","Features":[]}]]></features>
+</pipeline>
