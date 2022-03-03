@@ -2,7 +2,7 @@
 Includes all code used in my PhD Thesis.
 
 ### Chapter 2 <br>
-All accompanying material of Chapter 2 has been published here: <br>
+All accompanying materials of Chapter 2 have been published here: <br>
 https://elifesciences.org/articles/63776#data
 
 ### Chapter 3 <br>
